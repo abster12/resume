@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abhigyan — Resume
+% Built with Trey Hunner's resume.cls
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{resume}
+
+\usepackage[left=0.75in,top=0.2in,right=0.75in,bottom=0.1in]{geometry}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Abhigyan}
+\address{abhi.gyan.met16@itbhu.ac.in \quad +91-7****-****7}
+\address{github.com/abster12}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf Indian Institute of Technology (B.H.U), Varanasi} \hfill {\em July 2016 -- July 2020} \\
+Bachelor of Technology (B.Tech)
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Skills}
+\vspace{-10pt}
+
+\item {\textit Backend \& Distributed Systems}: Spring Boot, Dropwizard, Kafka, Workflow Engines, Java, Python
+\vspace{-8pt}
+\item {\textit Cloud \& Data}: AWS, Docker, Kubernetes, CI/CD, MySQL, ELK
+\vspace{-8pt}
+\item {\textit AI \& LLM Systems}: RAG, Multi-Agent Systems, Milvus, Claude Code, Cursor, Windsurf
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Experience}
+
+\begin{rSubsection}{Walmart}{May 2024 -- Present}{Software Engineer 3}{}
+\item Led performance optimization of core \textbf{Start and Update Workflow APIs}, reducing \textbf{P95 latency from \textasciitilde200ms to \textasciitilde130ms} and scaling the platform to \textbf{\textasciitilde1500 synchronous workflow executions per second} through database query optimizations and infrastructure tuning.
+\item Designed and implemented a \textbf{multi-tenant onboarding architecture} supporting multiple teams and \textbf{multiple workflow engines per tenant} within a shared cluster, defining data models, relationships, and lifecycle management.
+\item Owned the \textbf{end-to-end integration of Orkes Workflow Engine}, enabling workflow-driven orchestration across backend and AI-powered systems, including SDK integration, configuration management, and runtime interoperability.
+\item Built and owned a \textbf{production-grade AI platform}, including RAG pipelines (Docling, pdfplumber, Vision LLMs), \textbf{hybrid retrieval using Milvus (semantic + BM25 with RRF and cross-encoder re-ranking)}, and LLM-based response generation with evaluation and observability pipelines.
+\item Designed and implemented a \textbf{stateful multi-agent orchestration system} with task decomposition, parallel execution, dynamic model selection, and \textbf{persisted workflow state for deterministic pause/resume}, enabling human-in-the-loop code generation and review cycles.
+\item Built internal \textbf{AI-powered developer tooling} and introduced \textbf{spec-driven development workflows using LLMs}, improving engineering velocity and consistency across feature development.
+\item Mentored a junior engineer while owning services end-to-end within a \textbf{6-member backend team}, contributing to design reviews and technical decisions.
+\end{rSubsection}
+
+\begin{rSubsection}{Rakuten}{May 2023 -- May 2024}{Software Engineer 2}{}
+\item Designed high-volume payment batch processing systems and APIs, enabling seamless third-party integrations across multiple Rakuten brands.
+\item Built a Java-based mock server framework to simulate external payment providers, improving integration test coverage and reliability.
+\end{rSubsection}
+
+\begin{rSubsection}{Podeum}{July 2022 -- May 2023}{Founding Engineer}{}
+\item Built and scaled backend services from scratch using Java, supporting growth from \textbf{0 to \textasciitilde10,000 daily active users}.
+\item Designed and implemented core platform systems including authentication, virtual economy, in-app purchases, and real-time live score feeds.
+\end{rSubsection}
+
+\begin{rSubsection}{Morgan Stanley, Bangalore}{Oct 2020 -- June 2022}{Software Developer}{}
+\item Developed and maintained Big Data applications and set up CI/CD pipelines with Jenkins and Sonar, improving code quality and deployment workflows.
+\end{rSubsection}
+
+\end{rSection}
+
+\end{document}
