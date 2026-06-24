@@ -1,17 +1,48 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Abhigyan — Resume
+% Abhigyan — Resume (1-page variant)
 % Built with Trey Hunner's resume.cls
+% CONTENT UNCHANGED — only spacing + skills reimagination
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{resume}
+\documentclass[10pt,letterpaper]{resume}
 
-\usepackage[left=0.75in,top=0.2in,right=0.75in,bottom=0.1in]{geometry}
+% Tighter margins + 10pt to claw back vertical space
+\usepackage[left=0.55in,top=0.25in,right=0.55in,bottom=0.25in]{geometry}
+
+% Trim whitespace
+\usepackage[parfill]{parskip}
+\setlength{\parskip}{2pt}
+\linespread{1.05}
+
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 
+% --- Tighten section heading block (default: \bigskip + \medskip) ---
+\renewcommand{\sectionskip}{\vspace{4pt}}
+\renewcommand{\sectionlineskip}{\vspace{2pt}}
+
+% --- Tighten name + address block ---
+\renewcommand{\nameskip}{\vspace{-2pt}}
+\renewcommand{\addressskip}{\vspace{-2pt}}
+
+% --- Tighter job-block (rSubsection): reduce inter-item gap and trailer space ---
+\makeatletter
+\AtBeginDocument{%
+  \renewenvironment{rSubsection}[4]{%
+    \textbf{#1} \hfill #2%
+    \ifthenelse{\equal{#3}{}}{}{\\[-2pt] \emph{#3} \hfill \emph{#4}}%
+    \vspace{-2pt}%
+    \begin{list}{$\cdot$}{\leftmargin=1em%
+      \setlength{\itemsep}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \setlength{\topsep}{0pt}%
+    }\item[]%
+  }{\end{list}\vspace{2pt}}%
+}
+\makeatother
+
 \name{Abhigyan}
-\address{abhigyan0987@gmail.com \quad +91-7****-****7}
-\address{github.com/abster12}
+\address{abhigyan0987@gmail.com \quad $|$ \quad +91-7****-****7 \quad $|$ \quad github.com/abster12}
 
 \begin{document}
 
@@ -20,29 +51,22 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Education}
-
 {\bf Indian Institute of Technology (B.H.U), Varanasi} \hfill {\em July 2016 -- July 2020} \\
 Bachelor of Technology (B.Tech)
-
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	SKILLS
+%	SKILLS  (reimagined as a single compact line)
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Skills}
-\vspace{-10pt}
-
-\item {\textit Backend \& Distributed Systems}: Spring Boot, Dropwizard, Kafka, Workflow Engines, Java, Python
-\vspace{-8pt}
-\item {\textit Cloud \& Data}: AWS, Docker, Kubernetes, CI/CD, MySQL, ELK
-\vspace{-8pt}
-\item {\textit AI \& LLM Systems}: RAG, Multi-Agent Systems, Milvus, Claude Code, Cursor, Windsurf
-
+{\bf Backend \& Systems:} Spring Boot, Dropwizard, Kafka, Java, Python, Workflow Engines \par
+{\bf Cloud \& Data:} AWS, Docker, Kubernetes, MySQL, ELK, CI/CD \par
+{\bf AI \& LLM:} RAG, Multi-Agent Systems, Milvus, Claude Code, Cursor, Windsurf
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	EXPERIENCE
+%	EXPERIENCE  (content unchanged from your original)
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Experience}
@@ -50,7 +74,7 @@ Bachelor of Technology (B.Tech)
 \begin{rSubsection}{Walmart}{May 2024 -- Present}{Software Engineer 3}{}
 \item Led performance optimization of core \textbf{Start and Update Workflow APIs}, reducing \textbf{P95 latency from \textasciitilde200ms to \textasciitilde130ms} and scaling the platform to \textbf{\textasciitilde1500 synchronous workflow executions per second} through database query optimizations and infrastructure tuning.
 \item Designed and implemented a \textbf{multi-tenant onboarding architecture} supporting multiple teams and \textbf{multiple workflow engines per tenant} within a shared cluster, defining data models, relationships, and lifecycle management.
-\item Owned the \textbf{end-to-end integration of Orkes Workflow Engine}, enabling workflow-driven orchestration across backend and AI-powered systems, including SDK integration, configuration management, and runtime interoperability.
+\item Owned the \textbf{end-to-end integration of Orkes Workflow Engine}, enabling \textbf{workflow-driven orchestration across backend and AI-powered systems}, including SDK integration, configuration management, and runtime interoperability.
 \item Built and owned a \textbf{production-grade AI platform}, including RAG pipelines (Docling, pdfplumber, Vision LLMs), \textbf{hybrid retrieval using Milvus (semantic + BM25 with RRF and cross-encoder re-ranking)}, and LLM-based response generation with evaluation and observability pipelines.
 \item Designed and implemented a \textbf{stateful multi-agent orchestration system} with task decomposition, parallel execution, dynamic model selection, and \textbf{persisted workflow state for deterministic pause/resume}, enabling human-in-the-loop code generation and review cycles.
 \item Built internal \textbf{AI-powered developer tooling} and introduced \textbf{spec-driven development workflows using LLMs}, improving engineering velocity and consistency across feature development.
@@ -67,7 +91,7 @@ Bachelor of Technology (B.Tech)
 \item Designed and implemented core platform systems including authentication, virtual economy, in-app purchases, and real-time live score feeds.
 \end{rSubsection}
 
-\begin{rSubsection}{Morgan Stanley, Bangalore}{Oct 2020 -- June 2022}{Software Developer}{}
+\begin{rSubsection}{Morgan Stanley, Bangalore}{Oct 2020 -- Jun 2022}{Software Developer}{}
 \item Developed and maintained Big Data applications and set up CI/CD pipelines with Jenkins and Sonar, improving code quality and deployment workflows.
 \end{rSubsection}
 
